@@ -2,7 +2,7 @@ import { createStore, combineReducers } from 'redux'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import { composeWithDevTools } from '@redux-devtools/extension'
-import { postReducer } from './postSlice.js'
+import { postReducer } from './postReducer.js'
 
 const persistConfig = {
   key: 'root',
