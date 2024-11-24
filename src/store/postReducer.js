@@ -1,5 +1,3 @@
-
-
 const initialState = {
   posts: [],
 }
@@ -26,6 +24,18 @@ export const postReducer = (state = initialState, action) => {
             ? { ...post, modifier: action.payload.modifier }
             : post,
         ),
+      }
+    }
+    case 'SORT_BY_NAME_UP': {
+      const postsCopy = state.posts.map(post => post)
+      return {
+        posts: postsCopy.sort((a, b) => (a.title > b.title ? 1 : -1)),
+      }
+    }
+    case 'SORT_BY_NAME_DOWN': {
+      const postsCopy = state.posts.map(post => post)
+      return {
+        posts: postsCopy.sort((a, b) => (a.title < b.title ? 1 : -1)),
       }
     }
     default:

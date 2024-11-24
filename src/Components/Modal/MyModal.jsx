@@ -9,11 +9,19 @@ const MyModal = () => {
   const [form] = Form.useForm()
   const [open, setOpen] = useState(false)
   const onCreate = values => {
+    const timestamp = Date.now()
+    const date = new Date(timestamp)
+
+    const day = date.getDate()
+    const month = date.getMonth() + 1
+    const year = date.getFullYear()
+
     dispatch({
       type: 'ADD_POST',
       payload: {
         ...values,
-        id: Date.now(),
+        id: timestamp,
+        date: `${day}/${month}/${year}`,
       },
     })
     setOpen(false)

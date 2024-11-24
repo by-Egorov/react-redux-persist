@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.layout {
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  height: 64px;
+  padding: 48px;
+  line-height: 64px;
+}
+.content {
+  text-align: center;
+  height: calc(100vh - 128px);
+  line-height: 120px;
+}
+.footer {
+  text-align: center;
+  height: 64px;
+}
